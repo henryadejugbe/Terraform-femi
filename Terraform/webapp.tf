@@ -4,7 +4,7 @@
 }
 
 resource "azurerm_app_service_plan" "dev" {
-  name                = "PULTerraformplan"
+  name                = "__appserviceplan__"
   location            = "${azurerm_resource_group.dev.location}"
   resource_group_name = "${azurerm_resource_group.dev.name}"
 
