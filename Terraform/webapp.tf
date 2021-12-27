@@ -7,6 +7,9 @@
 	access_key  ="__storagekey__"
 	}
 	}
+  provider "azurerm" {
+  features {}
+}
 resource "azurerm_resource_group" "dev" {
   name     = "PULTerraform"
   location = "West Europe"
