@@ -10,15 +10,15 @@
   provider "azurerm" {
   features {}
 }
-resource "azurerm_resource_group" "prod" {
+resource "azurerm_resource_group"{
   name     = "PULTerraform"
   location = "West Europe"
 }
 
-resource "azurerm_app_service_plan" "prod" {
+resource "azurerm_app_service_plan"{
   name                = "__appserviceplan__"
-  location            = "${azurerm_resource_group.prod.location}"
-  resource_group_name = "${azurerm_resource_group.prod.name}"
+  location            = "${azurerm_resource_group.location}"
+  resource_group_name = "${azurerm_resource_group.name}"
 
   sku {
     tier = "Free"
@@ -26,10 +26,10 @@ resource "azurerm_app_service_plan" "prod" {
   }
 }
 
-resource "azurerm_app_service" "prod" {
+resource "azurerm_app_service"{
   name                = "__appservicename__"
-  location            = "${azurerm_resource_group.prod.location}"
-  resource_group_name = "${azurerm_resource_group.prod.name}"
-  app_service_plan_id = "${azurerm_app_service_plan.prod.id}"
+  location            = "${azurerm_resource_group.location}"
+  resource_group_name = "${azurerm_resource_group.name}"
+  app_service_plan_id = "${azurerm_app_service_plan.id}"
 
 }
