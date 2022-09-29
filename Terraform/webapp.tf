@@ -28,8 +28,8 @@ resource "azurerm_app_service_plan" "prod" {
 
 resource "azurerm_app_service" "prod" {
   name                = "__appservicename__"
-  location            = "${azurerm_resource_group.dev.location}"
-  resource_group_name = "${azurerm_resource_group.dev.name}"
-  app_service_plan_id = "${azurerm_app_service_plan.dev.id}"
+  location            = "${azurerm_resource_group.prod.location}"
+  resource_group_name = "${azurerm_resource_group.prod.name}"
+  app_service_plan_id = "${azurerm_app_service_plan.prod.id}"
 
 }
